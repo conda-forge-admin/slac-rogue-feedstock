@@ -10,7 +10,7 @@ source:
   sha256: c73e35472c7b248398a48cf466eb8587dff32c2c222de351cec0862b3d700242
 
 build:
-  number: 0
+  number: 1
   skip:
     - win
     - osx
@@ -21,7 +21,7 @@ requirements:
   build:
     - ${{ compiler('c') }}
     - ${{ compiler('cxx') }}
-    - ${{ stdlib('c') }} 
+    - ${{ stdlib('c') }}
     - cmake >=3.19
     - make
   host:
@@ -52,14 +52,14 @@ requirements:
 tests:
   - python:
       imports:
-       - pyrogue
-       - pyrogue.interfaces
-       - pyrogue.protocols
-       - pyrogue.examples
-       - rogue
+        - pyrogue
+        - pyrogue.interfaces
+        - pyrogue.protocols
+        - pyrogue.examples
+        - rogue
       pip_check: true
   - script:
-    - python -c "import pyrogue; assert pyrogue.__version__ == '${{ version }}'"
+      - python -c "import pyrogue; assert pyrogue.__version__ == '${{ version }}'"
 
 about:
   homepage: https://github.com/slaclab/rogue
